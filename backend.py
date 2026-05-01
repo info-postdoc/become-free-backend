@@ -21,8 +21,9 @@ app.add_middleware(
 )
 
 # ── Load knowledge base ──────────────────────────────────────────────────────
-KB_PATH    = "/home/sandbox/become_free/knowledge_base.json"
-INDEX_PATH = "/home/sandbox/become_free/tfidf_index.pkl"
+BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
+KB_PATH    = os.path.join(BASE_DIR, "knowledge_base.json")
+INDEX_PATH = os.path.join(BASE_DIR, "tfidf_index.pkl")
 
 with open(KB_PATH, 'r') as f:
     chunks = json.load(f)
